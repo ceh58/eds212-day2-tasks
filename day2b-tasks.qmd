@@ -8,7 +8,7 @@ editor_options:
 ---
 
 ```{r}
-library("tidyverse", "palmerpenguins")
+library(tidyverse,palmerpenguins)
 ```
 
 ```{r}
@@ -34,5 +34,31 @@ a <- 1.2
 eval(dp_da)
 
 #4214.784
+```
+
+```{r}
+library(palmerpenguins)
+data(package='palmerpenguins')
+penguins <- penguins
+```
+
+```{r}
+data_range <- data.frame(x = c(30, 65))
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))+
+  geom_point()+
+  xlab("Bill Length (mm)")+
+  ylab("Bill Depth (mm)")+
+  ggtitle("Bill Length vs. Depth")+
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm, y = species))+
+  geom_jitter()+
+  xlab("Flipper Length (mm)")+
+  ylab("Species")+
+  ggtitle("Flipper Length by Species")+
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
