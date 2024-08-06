@@ -1,0 +1,38 @@
+---
+title: "Day 2 b Tasks"
+author: "Carmen"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library("tidyverse", "palmerpenguins")
+```
+
+```{r}
+# create an expression ----
+fx <- expression(x^2)
+
+# derive ----
+df_dx <- D(expr = fx, name = "x")
+df_dx
+
+# evaluate ----
+x <- 3
+eval(df_dx)
+
+#6
+```
+
+```{r}
+pa <- expression(2 * (3 * a + 2)^4 - 5)
+dp_da <- D(expr = pa, name = "a")
+dp_da
+a <- 1.2
+eval(dp_da)
+
+#4214.784
+```
+
