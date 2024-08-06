@@ -46,11 +46,12 @@ penguins <- penguins
 data_range <- data.frame(x = c(30, 65))
 
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))+
-  geom_point()+
+  geom_point(aes(color = species))+
   xlab("Bill Length (mm)")+
   ylab("Bill Depth (mm)")+
   ggtitle("Bill Length vs. Depth")+
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5))+
+  facet_wrap(~island)
 ```
 
 ```{r}
@@ -61,4 +62,5 @@ ggplot(penguins, aes(x = flipper_length_mm, y = species))+
   ggtitle("Flipper Length by Species")+
   theme(plot.title = element_text(hjust = 0.5))
 ```
+
 
